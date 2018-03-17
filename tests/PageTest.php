@@ -90,5 +90,12 @@ class PageTest extends PHPUnit_Framework_TestCase
             print "[>>{$page->getNext()}]";
         }
     }
+
+    public function testInc()
+    {
+        print "\n";
+        $page = new Pagination(110, 2, 7, 5);
+        include __DIR__."/tpl.php";
+    }
 }
 

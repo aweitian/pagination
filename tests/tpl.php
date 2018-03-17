@@ -1,7 +1,3 @@
-# pagination
-```
-$page = new Pagination(110, 2, 7, 5);
-
 <?php print "total:   {$page->getCurPageNum()} / {$page->getMaxPage()}   ";?>
 
 <?php if ($page->hasPre()):?> 
@@ -22,4 +18,3 @@ $page = new Pagination(110, 2, 7, 5);
         >> <?php print $page->getNext()?>
     </a>
 <?php endif;?>
-```
