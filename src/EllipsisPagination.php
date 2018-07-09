@@ -49,7 +49,6 @@ class EllipsisPagination
         $hasRear = false;
         //这个3是第一个1,当前,最后三个按钮,这三个按钮肯定要是出现的
         if ($total > $btn_num) {
-//            var_dump('xxxxxxxxxxxxxxx');
             if ($cur < $btn_num) {
                 $hasRear = true;
             } else if ($cur > $total - ($btn_num - 1)) {
@@ -60,30 +59,18 @@ class EllipsisPagination
             }
         }
 
-
-//        var_dump($hasPre, $hasRear);
-
-
         if (!$hasPre && !$hasRear) {
-//            var_export('111111111111111');
             $start = null;
             $rear = null;
         } else if ($hasPre && !$hasRear) {
-//            var_export('222222222222222');
-
             $start = $total - $btn_num + 2;//$total - ($btn_num - 2);
             $rear = $total - 1;
         } else if ($hasRear && !$hasPre) {
-//            var_export('333333333333333');
-
             $start = 2;
             $rear = $btn_num - 1;//1 + $btn_num - 2;
         } else {
-//            var_export('444444444444444444');
-
             $start = $cur  - intval(floor(($btn_num - 3) / 2));
             $rear = $cur + intval(ceil(($btn_num - 3) / 2));
-            var_dump($start, $rear);
             if ($start < 2) {
                 $hasPre = false;
                 $start = 2;
