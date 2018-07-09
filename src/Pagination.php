@@ -10,13 +10,12 @@ namespace Aw;
 
 class Pagination
 {
-    private $totalLen;
-    private $curPageNum;
-    private $pageSize;
-    private $pageBtnLen;
-    private $rzRear;
-    private $data;
-
+    protected $totalLen;
+    protected $curPageNum;
+    protected $pageSize;
+    protected $pageBtnLen;
+    protected $rzRear;
+    protected $data;
     /**
      * 函数调用不需要考虑从0开始,外部全部从1开始,返回的数据也是从1计数
      *
@@ -46,6 +45,11 @@ class Pagination
         }
 
         $this->data = $this->getData();
+    }
+
+    public function getTotalRowNum()
+    {
+        return $this->totalLen;
     }
 
     /**
