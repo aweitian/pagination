@@ -72,6 +72,7 @@ class EllipsisPagination
         $this->data['rear'] = $rear;
         $this->data['cur'] = $cur;
         $this->data['total'] = $total;
+        $this->data['rows'] = $this->totalLen;
     }
 
     public function hasEllipsis()
@@ -141,5 +142,13 @@ class EllipsisPagination
     public function getPageSize()
     {
         return $this->pageSize;
+    }
+
+    /**
+     * @return array
+     */
+    public function getData()
+    {
+        return $this->data;
     }
 }
