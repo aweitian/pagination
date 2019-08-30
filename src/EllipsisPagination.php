@@ -73,6 +73,8 @@ class EllipsisPagination
         $this->data['cur'] = $cur;
         $this->data['total'] = $total;
         $this->data['rows'] = $this->totalLen;
+        $this->data['size'] = $this->pageSize;
+        $this->data['btnLen'] = $this->pageBtnLen;
     }
 
     public function hasEllipsis()
@@ -124,6 +126,7 @@ class EllipsisPagination
     }
 
     /**
+     * 一共有多少页
      * @return int
      */
     public function getTotal()
